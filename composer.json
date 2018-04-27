@@ -1,0 +1,21 @@
+{
+  "name": "affiliatelabs/responsecrm-php",
+  "description": "Unofficial PHP Wrapper for ResponseCRM",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Affiliate Labs",
+      "email": "info@affiliatelabs.com",
+      "homepage": "https://affiliatelabs.com",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "AffiliateLabs\\ResponseCRM\\": "src/"
+    }
+  },
+  "require": {
+    "kitetail/zttp": "^0.3.0"
+  }
+}
