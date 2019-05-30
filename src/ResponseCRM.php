@@ -177,4 +177,17 @@ class ResponseCRM
 			return 'invalid';
 		}
 	}
+	
+	//PAYPAL
+	public function createPayment(array $data)
+	{
+		$endpoint = 'paypal/create-payment';
+		return Zttp::withHeaders($this->getAuthHeader())->post($this->base . $endpoint, $data)->json();
+	}
+	
+	public function executePayment(array $data)
+	{
+		$endpoint = 'paypal/execute-payment';
+		return Zttp::withHeaders($this->getAuthHeader())->post($this->base . $endpoint, $data)->json();
+	}
 }
