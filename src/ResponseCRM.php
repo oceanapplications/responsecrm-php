@@ -181,13 +181,13 @@ class ResponseCRM
 	//PAYPAL
 	public function createPayment(array $data)
 	{
-		$endpoint = 'paypal/create-payment';
+		$endpoint = 'transactions/paypal/create-payment';
 		return Zttp::withHeaders($this->getAuthHeader())->post($this->base . $endpoint, $data)->json();
 	}
 	
 	public function executePayment(array $data)
 	{
-		$endpoint = 'paypal/execute-payment';
+		$endpoint = 'transactions/paypal/execute-payment';
 		return Zttp::withHeaders($this->getAuthHeader())->post($this->base . $endpoint, $data)->json();
 	}
 }
