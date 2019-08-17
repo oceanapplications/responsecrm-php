@@ -121,13 +121,10 @@ class ResponseCRM
 		])->json();
 	}
 
-	public function listTransactions($dateFrom, $dateTo)
+	public function listTransactions(array $filters)
 	{
 		$endpoint = 'transactions';
-		return Zttp::withHeaders($this->getAuthHeader())->get($this->base . $endpoint, [
-			'dateFromUtc' => strtotime($dateFrom),
-			'dateToUtc' => strtotime($dateTo)
-		])->json();
+		return Zttp::withHeaders($this->getAuthHeader())->get($this->base . $endpoint, $filters)->json();
 	}
 
 	// SITES
